@@ -8,7 +8,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/dashboard/latest/',
+    publicPath: '/',
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -21,7 +21,7 @@ const prodConfig = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: '_redirects', to: '.' }, // Isso garante que _redirects vá para dashboard/latest/
+        { from: 'public/_redirects', to: '.' }, // Isso garante que _redirects vá para dashboard/latest/
       ],
     }),
   ],
