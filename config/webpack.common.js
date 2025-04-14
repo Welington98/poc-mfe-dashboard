@@ -1,3 +1,6 @@
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -30,8 +33,8 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: '_redirects', to: '' },
-        { from: '_headers', to: '' },
+        { from: 'public/_redirects', to: '' },
+        { from: 'public/_headers', to: '' },
       ],
     }),
   ],
