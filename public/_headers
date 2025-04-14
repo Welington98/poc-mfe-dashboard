@@ -1,7 +1,0 @@
-# public/_headers
-/*.js
-  Content-Type: application/javascript
-/*.css
-  Content-Type: text/css
-/remoteEntry.js
-  Content-Type: application/javascript
