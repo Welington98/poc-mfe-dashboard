@@ -2,6 +2,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js'],
@@ -24,5 +26,13 @@ module.exports = {
         },
       },
     ],
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: '_redirects', to: '' },
+        { from: '_headers', to: '' },
+      ],
+    }),
+  ],
 };
